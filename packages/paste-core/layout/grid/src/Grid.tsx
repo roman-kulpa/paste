@@ -15,12 +15,26 @@ const getGridStyles = (gutter?: Space): MarginProps => {
   return marginStyles;
 };
 
-const Grid: React.FC<GridProps> = ({as, children, gutter, marginTop, marginBottom, vertical, ...props}) => {
+const Grid: React.FC<GridProps> = ({
+  as,
+  children,
+  equalColumnHeight,
+  gutter,
+  marginTop,
+  marginBottom,
+  vertical,
+  ...props
+}) => {
   const GridColumns = React.useMemo(
     () =>
       React.Children.map(children, child =>
         React.isValidElement(child)
-          ? React.cloneElement(child, {count: React.Children.count(children), gutter, vertical})
+          ? React.cloneElement(child, {
+              count: React.Children.count(children),
+              gutter,
+              vertical,
+              stretchColumnContent: equalColumnHeight,
+            })
           : child
       ),
     [children]
@@ -36,6 +50,7 @@ const Grid: React.FC<GridProps> = ({as, children, gutter, marginTop, marginBotto
       marginTop={marginTop}
       marginBottom={marginBottom}
       vertical={vertical}
+      hAlignContent={equalColumnHeight ? 'stretch' : null}
       wrap
     >
       {GridColumns}
@@ -53,6 +68,7 @@ if (process.env.NODE_ENV === 'development') {
     as: PropTypes.string as any,
     children: PropTypes.node.isRequired,
     vertical: ResponsiveProp(PropTypes.bool),
+    equalColumnHeight: PropTypes.bool,
   };
 }
 

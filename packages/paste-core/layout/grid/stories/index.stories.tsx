@@ -627,6 +627,36 @@ storiesOf('Layout|Grid', module)
       </Grid>
     );
   })
+  .add('Grid - 2 Column Content with equal height', () => {
+    return (
+      <Grid gutter="space70" vertical={[true, false, false]} equalColumnHeight>
+        <Column span={6}>
+          <Card padding="space70">
+            <Heading as="h2" variant="heading20">
+              Content Heading
+            </Heading>
+            <Paragraph>
+              Kale chips distillery authentic, portland etsy cloud bread vinyl gentrify drinking vinegar viral meh hot
+              chicken bitters fashion axe palo santo. Chillwave fixie sustainable <i>helvetica</i> etsy.
+            </Paragraph>
+            <Paragraph>
+              Prism whatever ethical, gochujang <strong>edison bulb</strong> put a bird on it kitsch. Pop-up 90&apos;s
+              la croix tumeric, palo santo chia try-hard direct trade tote bag roof party scenester kitsch stumptown
+              intelligentsia. Literally heirloom blue bottle etsy.
+            </Paragraph>
+          </Card>
+        </Column>
+        <Column span={6}>
+          <Card padding="space70">
+            <Heading as="h2" variant="heading20">
+              Card Heading
+            </Heading>
+            <Text as="p">Body</Text>
+          </Card>
+        </Column>
+      </Grid>
+    );
+  })
   .add('Grid - Containing long content', () => {
     return (
       <Box width="size50">
