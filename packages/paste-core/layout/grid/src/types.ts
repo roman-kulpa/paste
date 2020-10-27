@@ -16,7 +16,10 @@ export type ColumnOffset = ResponsiveValue<ColumnOffsetOptions>;
 export type ColumnSpanOptions = number;
 export type ColumnSpan = ResponsiveValue<ColumnSpanOptions>;
 
-export interface ColumnStyleProps extends Omit<LayoutProps, 'minWidth' | 'width'>, PaddingProps, Pick<FlexboxProps, 'alignContent'> {
+export interface ColumnStyleProps
+  extends Omit<LayoutProps, 'minWidth' | 'width'>,
+    PaddingProps,
+    Pick<FlexboxProps, 'alignContent'> {
   marginLeft?: ResponsiveValue<string>;
   minWidth?: ColumnMinWidth;
   width?: ColumnWidthSpan;
