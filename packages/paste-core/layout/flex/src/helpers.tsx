@@ -137,6 +137,7 @@ const RemapedHorizontalAlignments = {
   right: 'flex-end',
   around: 'space-around',
   between: 'space-between',
+  stretch: 'stretch',
 };
 
 // Gets hAlignContent and returns array of horizontal key value pairs, a horizontal key value pair, or flex-start

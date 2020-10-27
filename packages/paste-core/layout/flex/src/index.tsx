@@ -90,7 +90,7 @@ if (process.env.NODE_ENV === 'development') {
     display: ResponsiveProp(PropTypes.oneOf(['flex', 'inline-flex'])),
     vertical: ResponsiveProp(PropTypes.bool),
     vAlignContent: ResponsiveProp(PropTypes.oneOf(['top', 'center', 'bottom', 'stretch'])),
-    hAlignContent: ResponsiveProp(PropTypes.oneOf(['left', 'center', 'right', 'around', 'between'])),
+    hAlignContent: ResponsiveProp(PropTypes.oneOf(['left', 'center', 'right', 'around', 'between', 'stretch'])),
     grow: ResponsiveProp(PropTypes.oneOfType([PropTypes.bool, PropTypes.number])),
     shrink: ResponsiveProp(PropTypes.oneOfType([PropTypes.bool, PropTypes.number])),
     basis: ResponsiveProp(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
